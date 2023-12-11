@@ -1,0 +1,13 @@
+name: Extraer nombre user
+run-name: ${{ github.actor }} is testing out GitHub Actions
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Show GitHub context   
+        env: 
+          GITHUB_CONTEXT: ${{ toJson(github) }}   
+        run: echo "$GITHUB_CONTEXT"
+        shell: bash
